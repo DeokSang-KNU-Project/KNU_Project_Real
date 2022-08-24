@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_lay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    tools:context=".SubActivity2"
+    android:gravity = "bottom"
+    app:umanoDragView="@id/slide_menu"
+    app:umanoScrollableView="@id/menu_list"
+    app:umanoPanelHeight="70sp"
+    app:umanoOverlay="false"
+    app:umanoParallaxOffset="200sp"
+    app:umanoShadowHeight="10sp"
     >
-    <!--LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:visibility="visible"
-        android:id="@+id/UnivMap"
-        >
-        </LinearLayout-->
+        android:layout_height="match_parent">
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:visibility="visible"
         android:id="@+id/UnivMap"
+        app:navermap_latitude="37.27472779999972"
+        app:navermap_longitude="127.1305704999994"
+        app:navermap_zoom="16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:name="com.naver.maps.map.MapFragment"/>
+        <!--com.naver.maps.map.MapView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/UnivMap"
+            app:navermap_latitude="37.27472779999972"
+            app:navermap_longitude="127.1305704999994"
+            app:navermap_zoom="16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           /-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="#00ff00"
-        android:layout_weight="5">
-        <Button
+        android:layout_height="wrap_content"
+        android:id="@+id/slide_menu"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학교 지도"
-            android:id="@+id/UnivMapBtn"
-            android:padding="20dp"
-            ></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="건물 내부1"
-            android:padding="20dp"
-            ></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="건물 내부2"
-            android:padding="20dp"
-            ></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="건물 내부3"
-            android:padding="20dp"
-            ></Button>
+            android:layout_height="70sp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:text="건물 리스트"
+                android:textSize="25sp"></TextView>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/menu_list"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"></ListView>
+
     </LinearLayout>
 
-</LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

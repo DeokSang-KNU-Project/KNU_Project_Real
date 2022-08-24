@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.25" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.1" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub3.xml" value="0.33559782608695654" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.23772609819121446" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sub2.xml" value="0.358695652173913" />
@@ -17,5 +17,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

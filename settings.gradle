@@ -10,9 +10,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter()
+        //jcenter()
         maven {
             url 'https://naver.jfrog.io/artifactory/maven/'
+        }
+        maven {
+            url 'https://jitpack.io'
         }
     }
 }
