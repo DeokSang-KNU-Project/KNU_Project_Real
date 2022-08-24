@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.gson.JsonArray;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
 import com.naver.maps.map.CameraUpdate;
@@ -27,10 +29,22 @@ import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import okio.Utf8;
+
 public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback {
     LatLng coord = new LatLng(37.27472779999972, 127.1305704999994);
     CameraUpdate cameraUpdate = CameraUpdate.scrollTo(new LatLng(37.27472779999972, 127.1305704999994));
     InfoWindow infoWindow;
+    String json = "";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,88 +70,77 @@ public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback
         LocationOverlay locationOverlay = naverMap.getLocationOverlay();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, structure);
         struct_list.setAdapter(adapter);
+
         Marker marker = new Marker();
         CameraPosition cameraPosition = naverMap.getCameraPosition();
 
+
+        try{
+            InputStream is = getAssets().open("Json/structure_info.json");
+            int filesize = is.available();
+
+            byte[] buffer = new byte[filesize];
+            is.read(buffer);
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
         infoWindow = new InfoWindow();
-        infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(this) {
-            @NonNull
-            @Override
-            public CharSequence getText(@NonNull InfoWindow infoWindow) {
-                return null;
-            }
-        });
+
 
         struct_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                double lat = 0.0;
+                double lon = 0.0;
+                String strinfo = "";
+                try{
+                    JSONObject jsonObject = new JSONObject(json);
+                    JSONArray BulidArray = jsonObject.getJSONArray("Buliding_name");
 
-                switch(i){
-                    case 0:
-                        coord = new LatLng( 37.27496452179004,127.12999189152013);
-                        break;
-                    case 1:
-                        coord = new LatLng( 37.27534657189453, 127.13080154844329);
-                        break;
-                    case 2:
-                        coord = new LatLng(37.27606956456262,127.13088454580281);
-                        break;
-                    case 3:
-                        coord = new LatLng(37.275834190366126,127.13187918651508);
-                        break;
-                    case 4:
-                        coord = new LatLng(37.276462085367605,127.13239895154122);
-                        break;
-                    case 5:
-                        coord = new LatLng(37.27413099265969,127.13208762320942);
-                        break;
-                    case 6:
-                        coord = new LatLng(37.274495465847295,127.13248852725621);
-                        break;
-                    case 7:
-                        coord = new LatLng(37.275336971145606,127.13334974052292);
-                        break;
-                    case 8:
-                        coord = new LatLng(37.27571662098761, 127.13426934845258);
-                        break;
-                    case 9:
-                        coord = new LatLng(37.2760961622743, 127.13329188397137);
-                        break;
-                    case 10:
-                        coord = new LatLng(37.27691576668962, 127.13359494859745);
-                        break;
-                    case 11:
-                        coord = new LatLng(37.27650533891552, 127.13399732003852);
-                        break;
-                    case 12:
-                        coord = new LatLng(37.27709303933176, 127.13419850227572);
-                        break;
-                    case 13:
-                        coord = new LatLng(37.27783465641703, 127.1337459746537);
-                        break;
-                    case 14:
-                        coord = new LatLng(37.27810389699764, 127.13469078856325);
-                        break;
-                    case 15:
-                        coord = new LatLng(37.27851038679704, 127.13378945423662);
-                        break;
-                    case 16:
-                        coord = new LatLng(37.27718937911577, 127.13465815138105);
-                        break;
-                    case 17:
-                        coord = new LatLng(37.2773282652328, 127.13533775105167);
-                        break;
-                    default:
-                        break;
+                    JSONObject BulidOB = BulidArray.getJSONObject(i);
+
+                    BulidInfo bulidInfo = new BulidInfo();
+
+                    bulidInfo.setBulid(BulidOB.getString("name"), BulidOB.getString("info"));
+                    bulidInfo.setLat(BulidOB.getString("latitude"), BulidOB.getString("longitude"));
+                    lat = bulidInfo.getLatit();
+                    lon = bulidInfo.getLongit();
+                    strinfo = bulidInfo.getInfo();
+                    infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+                        @NonNull
+                        @Override
+                        public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                            return (CharSequence)bulidInfo.getInfo();
+                        }
+                    });
                 }
+                catch (JSONException e){
+                    e.printStackTrace();
+                }
+                coord = new LatLng( lat,lon);
                 cameraUpdate = CameraUpdate.scrollTo(coord);
                 naverMap.moveCamera(cameraUpdate);
                 marker.setPosition(coord);
                 marker.setMap(naverMap);
                 marker.setCaptionText(structure[i]);
-
-
+                infoWindow.open(marker);
             }
         });
+
+        marker.setOnClickListener(overlay -> {
+            if(marker.getInfoWindow() == null){
+                infoWindow.open(marker);
+            }
+            else{
+                infoWindow.close();
+            }
+            return true;
+        });
     }
+
 }
