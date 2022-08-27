@@ -38,31 +38,6 @@ public class SubActivity4 extends AppCompatActivity {
                         change_num=1;
                         break;
                     }
-                    case R.id.cpp_box:
-                    {
-                        change_num=2;
-                        break;
-                    }
-                    case R.id.java_box:
-                    {
-                        change_num=3;
-                        break;
-                    }
-                    case R.id.python_box:
-                    {
-                        change_num=4;
-                        break;
-                    }
-                    case R.id.chash_box:
-                    {
-                        change_num=5;
-                        break;
-                    }
-                    case R.id.game_box:
-                    {
-                        change_num=6;
-                        break;
-                    }
                 }
             }
         });
@@ -73,41 +48,10 @@ public class SubActivity4 extends AppCompatActivity {
                 {
                     case 1:
                     {
-                        Intent intent=new Intent(SubActivity4.this,C_Activity.class);
+                        Intent intent=new Intent(SubActivity4.this,Search_Activity.class);
                         startActivity(intent);
                         break;
                     }
-                    case 2:
-                    {
-                        Intent intent=new Intent(SubActivity4.this,CPP_Activity.class);
-                        startActivity(intent);
-                        break;
-                    }
-                    case 3:
-                    {
-                        Intent intent=new Intent(SubActivity4.this,JAVA_Activity.class);
-                        startActivity(intent);
-                        break;
-                    }
-                    case 4:
-                    {
-                        Intent intent=new Intent(SubActivity4.this,PYTHON_Activity.class);
-                        startActivity(intent);
-                        break;
-                    }
-                    case 5:
-                    {
-                        Intent intent=new Intent(SubActivity4.this,CHASH_Activity.class);
-                        startActivity(intent);
-                        break;
-                    }
-                    case 6:
-                    {
-                        Intent intent=new Intent(SubActivity4.this,GAME_Activity.class);
-                        startActivity(intent);
-                        break;
-                    }
-
                 }
             }
         });
