@@ -1,10 +1,14 @@
 package com.example.myapplication2;
 
+import com.naver.maps.geometry.LatLng;
+
 public class BulidInfo {
     private String name;
     private String Info;
     private String latit;
     private String longit;
+
+
 
     public String getName() {
         return name;
@@ -33,4 +37,9 @@ public class BulidInfo {
         this.latit = latit;
         this.longit = longit;
     }
+    public LatLng getLat(){
+        LatLng lat = new LatLng(Double.valueOf(latit).doubleValue(), Double.valueOf(longit).doubleValue());
+        return lat;
+    }
+
 }

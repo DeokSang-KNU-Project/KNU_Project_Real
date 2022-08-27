@@ -25,23 +25,15 @@
         app:navermap_latitude="37.27472779999972"
         app:navermap_longitude="127.1305704999994"
         app:navermap_zoom="16"
+        app:navermap_bearing = "35"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:navermap_rotateGesturesEnabled="false"
+        app:navermap_zoomGesturesEnabled="false"
+
         android:name="com.naver.maps.map.MapFragment"/>
-        <!--com.naver.maps.map.MapView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/UnivMap"
-            app:navermap_latitude="37.27472779999972"
-            app:navermap_longitude="127.1305704999994"
-            app:navermap_zoom="16"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-           /-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -65,8 +57,10 @@
         <ListView
             android:id="@+id/menu_list"
             android:layout_width="match_parent"
-            android:layout_height="300sp"></ListView>
+            android:layout_height="300sp">
+        </ListView>
 
     </LinearLayout>
+
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
