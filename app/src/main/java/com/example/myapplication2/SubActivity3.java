@@ -23,7 +23,6 @@ public class SubActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub3);
-
         textView = (TextView) findViewById(R.id.textView);
         major_btn=findViewById(R.id.major_btn);
         Spinner spinner=(Spinner)findViewById(R.id.spinner);
