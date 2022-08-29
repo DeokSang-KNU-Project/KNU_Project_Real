@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/File/KNU_Backup/app/src/main/res/layout/activity_sub3.xml" value="0.359375" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_bottom.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_left.xml" value="0.265" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_right.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_top.xml" value="0.265" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_cactivity.xml" value="0.3494791666666667" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_chash.xml" value="0.3494791666666667" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_cpp.xml" value="0.3494791666666667" />
@@ -12,10 +17,12 @@
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_loading.xml" value="0.19791666666666666" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_python.xml" value="0.3489583333333333" />
-        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_search.xml" value="0.28675213675213673" />
-        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.33" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_search.xml" value="0.33" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.22" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub3.xml" value="0.33559782608695654" />
         <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub4.xml" value="0.41875" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/book_information.xml" value="0.25" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/list_ltem.xml" value="0.33" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.23772609819121446" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sub2.xml" value="0.358695652173913" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sub3.xml" value="0.358695652173913" />

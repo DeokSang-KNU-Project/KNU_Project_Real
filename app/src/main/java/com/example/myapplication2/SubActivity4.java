@@ -27,7 +27,6 @@ public class SubActivity4 extends AppCompatActivity {
         next_btn=findViewById(R.id.next_btn);
         radio_group=findViewById((R.id.radio_group));
 
-
        radio_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

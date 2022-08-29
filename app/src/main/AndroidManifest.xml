@@ -33,6 +33,8 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
+        <activity android:name=".BookDetail"
+            android:exported="false"></activity>
 
         <activity
             android:name=".Loading_Activity"

@@ -6,6 +6,10 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.HashMap;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -24,15 +29,17 @@ public class Naver_Api extends AsyncTask<String, Void , String> {
       private String clientPw = "i81XdmGVVW";
       private String str, Msg, text;
       private final int display = 100;
+      public int start=1;
 
    @Override
    protected String doInBackground(String... strings) {
-      text = "C";
+      text = "C%2B%2B";
       URL url;
       try{
-         url = new URL(	"https://openapi.naver.com/v1/search/book.json"
-                        +"?query="+text
-                        +"&display"+display);
+         url = new URL(	"https://openapi.naver.com/v1/search/book_adv.json"
+                        +"?d_titl="+text
+                        +"&display="+display
+                        +"&start="+start);
          HttpURLConnection conn = (HttpURLConnection) url.openConnection();
          conn.setRequestMethod("GET");
          conn.setRequestProperty("X-Naver-Client-Id", clientId);
@@ -64,4 +71,11 @@ public class Naver_Api extends AsyncTask<String, Void , String> {
       return Msg;
    }
 
+   public void setStart(int start) {
+      this.start = this.start+(start*100);
+   }
+
+   public void setText(String text) {
+      this.text = text;
+   }
 }
