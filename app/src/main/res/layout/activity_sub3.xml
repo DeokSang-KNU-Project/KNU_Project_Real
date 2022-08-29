@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SubActivity3">
 
-    <ImageView
-        android:layout_width="207dp"
-        android:layout_height="79dp"
-        android:src="@drawable/tree2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="161dp"
-        android:layout_height="118dp"
-        android:src="@drawable/tree3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/sub3"
+        android:scaleType="centerCrop"/>
 
     <Spinner
         android:id="@+id/spinner"
@@ -38,7 +24,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="100dp"/>
 
     <TextView
         android:id="@+id/textView"
@@ -54,7 +42,8 @@
         android:shadowRadius="2.0"
         android:shadowDx="5.0"
         android:shadowDy="5.0"
-        android:shadowColor="#000000"/>
+        android:shadowColor="#000000"
+        android:layout_marginBottom="100dp"/>
 
     <Button
         android:id="@+id/major_btn"
@@ -69,18 +58,10 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="#00ff0000"
         android:textSize="25dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginRight="135dp"
         />
 
-    <ImageView
-        android:layout_width="412dp"
-        android:layout_height="271dp"
-        android:src="@drawable/grass3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
 
 
