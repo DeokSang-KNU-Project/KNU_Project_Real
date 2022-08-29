@@ -36,85 +36,6 @@ import java.util.ArrayList;
 
 public class SubActivity4 extends AppCompatActivity {
 
-    private Button next_btn;
-    RadioGroup radio_group;
-    int change_num;
-    int count = 0;
-    String json = "";
-    String bname = "ddddd";
-
-    private ArrayList<String> arrayList;
-
-
-
-    private String getJsonString()
-    {
-        try {
-            InputStream is = getAssets().open("Json/ICTSOFT.json");
-            int fileSize = is.available();
-
-            byte[] buffer = new byte[fileSize];
-            is.read(buffer);
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-        }
-        catch (IOException ex)
-        {
-            ex.printStackTrace();
-        }
-
-        return json;
-    }
-
-    public class booksys{
-        private String name;
-        private String URLname;
-
-        public String getName() {
-            return name;
-        }
-
-        public String getURLname() {
-            return URLname;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setURLname(String URLname) {
-            this.URLname = URLname;
-        }
-
-    }
-
-    private void jsonParsing(String json)
-    {
-        try{
-            arrayList = new ArrayList<>();
-            JSONObject jsonObject = new JSONObject(json);
-
-            JSONArray bookArray = jsonObject.getJSONArray("OS");
-
-            for(int i=0; i<bookArray.length(); i++)
-            {
-                count++;
-                JSONObject bookobject = bookArray.getJSONObject(i);
-
-                booksys books = new booksys();
-
-                books.setName(bookobject.getString("name"));
-                books.setURLname(bookobject.getString("URLname"));
-
-                arrayList.add(books.getName());
-            }
-        }catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,7 +43,6 @@ public class SubActivity4 extends AppCompatActivity {
 
         final LinearLayout lm = (LinearLayout) findViewById(R.id.ll);
         final RadioGroup radiogroup = (RadioGroup) findViewById(R.id.group1);
-
 
         // linearLayout params 정의
 
@@ -155,7 +75,7 @@ public class SubActivity4 extends AppCompatActivity {
 
             btn.setId(j + 1);
 
-            btn.setText(arrayList.get(1));
+            //btn.setText(arrayList.get(1));
             btn.setTextSize(20);
             btn.setPadding(20,0,0,40);
             btn.setLayoutParams(params);
@@ -168,7 +88,5 @@ public class SubActivity4 extends AppCompatActivity {
             lm.addView(ll);
 
         }
-
     }
-
-    }
+}

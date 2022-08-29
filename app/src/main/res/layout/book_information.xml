@@ -20,6 +20,7 @@
             android:src="@drawable/lamb2"
             android:id="@+id/bookinfo_image"
             android:background="@drawable/edge"
+            android:layout_margin="10dp"
             ></ImageView>
         <LinearLayout
             android:layout_width="0dp"

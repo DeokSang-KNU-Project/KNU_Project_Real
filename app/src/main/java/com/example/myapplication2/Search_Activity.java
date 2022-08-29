@@ -40,9 +40,6 @@ import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.concurrent.ExecutionException;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class Search_Activity extends AppCompatActivity {

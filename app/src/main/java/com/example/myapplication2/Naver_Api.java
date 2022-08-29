@@ -19,9 +19,6 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class Naver_Api extends AsyncTask<String, Void , String> {
 
