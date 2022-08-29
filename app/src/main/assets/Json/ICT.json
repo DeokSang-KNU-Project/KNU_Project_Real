@@ -1,0 +1,12 @@
+{
+  "OS": [
+    {
+      "name" : "리눅스",
+      "URLname" : "리눅스"
+    },
+    {
+      "name" : "ios",
+      "URLname" : "ios"
+    }
+  ]
+}
