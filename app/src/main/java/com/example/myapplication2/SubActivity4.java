@@ -122,7 +122,7 @@ public class SubActivity4 extends AppCompatActivity {
 
         final LinearLayout lm = (LinearLayout) findViewById(R.id.ll);
         final RadioGroup radiogroup = (RadioGroup) findViewById(R.id.group1);
-        
+
 
         // linearLayout params 정의
 
