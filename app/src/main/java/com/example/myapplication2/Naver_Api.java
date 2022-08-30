@@ -30,7 +30,6 @@ public class Naver_Api extends AsyncTask<String, Void , String> {
 
    @Override
    protected String doInBackground(String... strings) {
-      text = "C%2B%2B";
       URL url;
       try{
          url = new URL(	"https://openapi.naver.com/v1/search/book_adv.json"

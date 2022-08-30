@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".BookDetail"
             android:exported="false"></activity>
+        <activity android:name=".Search_Activity"
+            android:exported="false"></activity>
 
         <activity
             android:name=".Loading_Activity"

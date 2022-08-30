@@ -67,6 +67,7 @@ public class SubActivity3 extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "ICTSOFT");
                                 startActivity(intent);
                             }
                         });

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -35,58 +36,160 @@ import java.util.ArrayList;
 
 
 public class SubActivity4 extends AppCompatActivity {
-
+    private String jsonData, Major;
+    private ArrayList<FileData> DataArray = new ArrayList<>();
+    private int Count, curindex=0, ReTime, CurTime=0;
+    private int Step =0;
+    private final int MAXCOUNT = 10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub4);
 
-        final LinearLayout lm = (LinearLayout) findViewById(R.id.ll);
-        final RadioGroup radiogroup = (RadioGroup) findViewById(R.id.group1);
+        RadioGroup radioGroup = findViewById(R.id.r_group);
+        Button pivBtn = findViewById(R.id.piv_btn);
+        Button nxtBtn = findViewById(R.id.next_btn);
+        Button confilmBtn = findViewById(R.id.confirm_btn);
 
-        // linearLayout params 정의
+        Intent intent = getIntent();
+        Major = intent.getStringExtra("Major");
+        JSONPassing();
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+       String Fstep = "filed";
+       FindJsonArray(Fstep);
+       SetRadioBtn(radioGroup);
 
-                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        nxtBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((CurTime+1) < ReTime){//x < 2  0+1 T 1+1 F
+                    CurTime +=1;
+                    Log.i("press nx curtime : ", Integer.toString(CurTime));
+                    SetRadioBtn(radioGroup);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"맨 뒷 페이지 입니다.",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        pivBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("count : ", Integer.toString(CurTime));
+                if((CurTime -1) >= 0){// 1-1 == 0 T
+                    CurTime -=1;
+                    Count += MAXCOUNT;
+                    if(curindex % MAXCOUNT !=0){
+                        curindex -= (curindex%MAXCOUNT)+MAXCOUNT;
+                    }
+                    else if(curindex % MAXCOUNT ==0){
+                        curindex -= (MAXCOUNT*2);
+                    }
+                    if(curindex<0){
+                        curindex =0;
+                    }
+                    Log.i("press piv curtime : ", Integer.toString(CurTime));
+                    SetRadioBtn(radioGroup);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"맨 앞 페이지 입니다.",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        confilmBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int ID = radioGroup.getCheckedRadioButtonId();
+                if(Step < 1) {
+                    curindex = 0;
+                    CurTime = 0;
+                    FindJsonArray(DataArray.get(ID).getName());
+                    SetRadioBtn(radioGroup);
+                    Step++;
+                }
+                else{
+                    Intent intent1 = new Intent(SubActivity4.this, Search_Activity.class);
+                    intent1.putExtra("SearchWord", DataArray.get(ID).getURLname());
+                    startActivity(intent1);
+                    finish();
+                }
+            }
+        });
 
 
+    }
+
+    public void SetRadioBtn(RadioGroup radioGroup){
+        radioGroup.removeAllViews();
+        RadioGroup.LayoutParams layoutParams = new RadioGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        layoutParams.weight =1;
+        Log.i("corCount : ", Integer.toString(Count));
+        if(Count >= MAXCOUNT){
+            for(int i=0; i<MAXCOUNT; i++){
+
+                RadioButton btn = new RadioButton(this);
+                btn.setId(curindex);
+                btn.setText(DataArray.get(curindex).getViewname());
+                btn.setTextSize(20);
+                radioGroup.addView(btn, layoutParams);
+                curindex++;
+            }
+            Count -= MAXCOUNT;
+        }
+        else{
+            for(int i=0; i<Count; i++){
+                RadioButton btn = new RadioButton(this);
+                btn.setId(curindex);
+                btn.setText(DataArray.get(curindex).getViewname());
+                btn.setTextSize(20);
+                radioGroup.addView(btn, layoutParams);
+                curindex++;
+            }
+        }
 
 
+    }
+    public void JSONPassing(){
+        try{
+            InputStream is = getAssets().open("Json/"+Major+".json");
+            int filesize = is.available();
 
+            byte[] buffer = new byte[filesize];
+            is.read(buffer);
+            is.close();
 
+            jsonData = new String(buffer, "UTF-8");
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    private void FindJsonArray(String str){
+        DataArray.clear();
+        try{
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONArray jsonArray = jsonObject.getJSONArray(str);
 
-        for (int j = 0; j <= 5; j++) {
+            for(int i=0; i< jsonArray.length(); i++){
+                JSONObject getVal = jsonArray.getJSONObject(i);
 
-            // LinearLayout 생성
+                FileData fileData = new FileData();
+                fileData.setData(getVal.getString("Viewname"),getVal.getString("name"),getVal.getString("URLname"));
 
-            LinearLayout ll = new LinearLayout(this);
-
-            ll.setOrientation(LinearLayout.HORIZONTAL);
-
-            RadioGroup.LayoutParams rprms= new RadioGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-
-
-            // 버튼 생성
-
-            final RadioButton btn = new RadioButton(this);
-
-            // setId 버튼에 대한 키값
-
-            btn.setId(j + 1);
-
-            //btn.setText(arrayList.get(1));
-            btn.setTextSize(20);
-            btn.setPadding(20,0,0,40);
-            btn.setLayoutParams(params);
-
-            //버튼 add
-
-            radiogroup.addView(btn,rprms);
-            //LinearLayout 정의된거 add
-
-            lm.addView(ll);
-
+                DataArray.add(fileData);
+            }
+            Count = DataArray.size();
+            ReTime = Count/MAXCOUNT;
+            if(Count%MAXCOUNT!=0){
+                ReTime++;
+            }
+            Log.i("Set Retime", Integer.toString(ReTime));
+        }
+        catch (JSONException e){
+            e.printStackTrace();
         }
     }
 }
