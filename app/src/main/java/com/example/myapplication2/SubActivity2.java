@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,7 @@ import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
 
 import org.json.JSONArray;
@@ -64,7 +66,8 @@ public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback
     private JSONArray BulidArray;
     private BulidInfo bulidInfo = new BulidInfo();;
     private ArrayList<String> arrayList;
-
+    private String InfoVal;
+    private String Bname = "";
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub2);
@@ -152,7 +155,8 @@ public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 double lat = 0.0;
                 double lon = 0.0;
-                String Bname = "";
+
+                String Capon ="상세한 정보를 보려면 \n 말풍선 클릭";
                 try{
                     JSONObject jsonObject = new JSONObject(json);
                     JSONArray BulidArray = jsonObject.getJSONArray("Buliding_name");
@@ -165,11 +169,12 @@ public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback
                     lat = bulidInfo.getLatit();
                     lon = bulidInfo.getLongit();
                     Bname = bulidInfo.getName();
+                    InfoVal = bulidInfo.getInfo();
                     infoWindow.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
                         @NonNull
                         @Override
                         public CharSequence getText(@NonNull InfoWindow infoWindow) {
-                            return (CharSequence)bulidInfo.getInfo();
+                            return (CharSequence)Capon;
                         }
                     });
                 }
@@ -196,6 +201,17 @@ public class SubActivity2 extends FragmentActivity implements OnMapReadyCallback
                 infoWindow.close();
             }
             return true;
+        });
+
+        infoWindow.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                Intent intent = new Intent(SubActivity2.this, ShowBulidInfo.class);
+                intent.putExtra("BulidTitle", Bname);
+                intent.putExtra("BulidIInfo", InfoVal);
+                startActivity(intent);
+                return false;
+            }
         });
     }
 
