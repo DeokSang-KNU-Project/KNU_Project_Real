@@ -86,46 +86,21 @@
       "Viewname" : "MATLAB",
       "URLname" : "MATLAB"
     },
-
     {
       "name" : "Java",
       "Viewname" : "Java",
       "URLname" : "Java"
-    },
-
-    {
-      "name" : "Golang",
-      "Viewname" : "Golang",
-      "URLname" : "Golang"
-    },
-    {
-      "name" : "Perl",
-      "Viewname" : "Perl",
-      "URLname" : "Perl"
     },
     {
       "name" : "Python",
       "Viewname" : "파이썬(Python)",
       "URLname" : "Python"
     },
-
     {
       "name" : "Rust",
       "Viewname" : "Rust",
       "URLname" : "Rust"
     },
-
-    {
-      "name" : "Ruby",
-      "Viewname" : "Ruby",
-      "URLname" : "Ruby"
-    },
-    {
-      "name" : "Swift",
-      "Viewname" : "Swift",
-      "URLname" : "Swift"
-    },
-
     {
       "name" : "Visual Basic",
       "Viewname" : "Visual Basic",
@@ -139,12 +114,12 @@
     {
       "name": "Unity",
       "Viewname" : "유니티(Unity)",
-      "URLname": "Unity"
+      "URLname": "유니티"
     },
     {
       "name": "Unreal",
       "Viewname" : "언리얼(Unreal)",
-      "URLname": "Unreal"
+      "URLname": "언리얼"
     }
   ]
 }

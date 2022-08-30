@@ -14,9 +14,11 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,8 +64,8 @@ public class Search_Activity extends AppCompatActivity {
 
         resulttext = "없음";
         ListView booklist = findViewById(R.id.list_Id);
-        Button nxtBtn = findViewById(R.id.booklist_next);
-        Button pivBtn = findViewById(R.id.booklist_piv);
+        ImageButton nxtBtn = findViewById(R.id.booklist_next);
+        ImageButton pivBtn = findViewById(R.id.booklist_piv);
         TextView sText = findViewById(R.id.search_book_count);
         TextView lText = findViewById(R.id.ListPage_Id);
 
@@ -88,7 +90,7 @@ public class Search_Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         TotalPage = Integer.parseInt(str)/100;
-        if((TotalPage%100)!=0){
+        if(( Integer.parseInt(str)%100)!=0){
             TotalPage++;
         }
 
@@ -135,32 +137,40 @@ public class Search_Activity extends AppCompatActivity {
                     booklist.setAdapter(adapter);
                     lText.setText(currPage+"/"+TotalPage);
                 }
+                else{
+                    Toast.makeText(getApplicationContext(),"맨 앞 페이지 입니다.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         nxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Count++;
-                currPage++;
-                try{
-                    bookarr.clear();
-                    Naver_Api naver_api = new Naver_Api();
-                    naver_api.setStart(Count);
-                    naver_api.setText(SearchWord);
-                    resulttext = naver_api.execute().get();
-                    BooklistjsonParser(resulttext);
-                }
-                catch (InterruptedException e){
-                    e.printStackTrace();
-                }
-                catch (ExecutionException e){
-                    e.printStackTrace();
-                }
+                if(currPage<TotalPage) {
+                    Count++;
+                    currPage++;
+                    try {
+                        bookarr.clear();
+                        Naver_Api naver_api = new Naver_Api();
+                        naver_api.setStart(Count);
+                        naver_api.setText(SearchWord);
+                        resulttext = naver_api.execute().get();
+                        BooklistjsonParser(resulttext);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
 
-                adapter = new CustomAdapter(Search_Activity.this, 0, bookarr);
-                booklist.setAdapter(adapter);
-                lText.setText(currPage+"/"+TotalPage);
+                    adapter = new CustomAdapter(Search_Activity.this, 0, bookarr);
+                    booklist.setAdapter(adapter);
+                    lText.setText(currPage + "/" + TotalPage);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"맨 뒷 페이지 입니다.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
