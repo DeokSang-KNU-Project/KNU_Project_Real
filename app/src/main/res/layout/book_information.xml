@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:weightSum="5"
-    tools:context=".BookDetail">
+    tools:context=".BookDetail"
+    android:background="@drawable/book_bg">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,6 +15,8 @@
         android:orientation="horizontal"
         android:weightSum="5"
         android:background="@drawable/edge">
+
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -20,7 +24,6 @@
             android:src="@drawable/lamb2"
             android:id="@+id/bookinfo_image"
             android:background="@drawable/edge"
-            android:layout_margin="10dp"
             ></ImageView>
         <LinearLayout
             android:layout_width="0dp"
@@ -45,18 +48,18 @@
                     android:gravity="center"
                     android:background="@drawable/edge"
                     ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"
-                android:text="제목"
-                android:gravity="center"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMaxTextSize="30dp"
-                android:autoSizeMinTextSize="10dp"
-                android:autoSizeStepGranularity="1dp"
-                android:id="@+id/bookinfo_title"
-                android:background="@drawable/edge"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:text="제목"
+                    android:gravity="center"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="30dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeStepGranularity="1dp"
+                    android:id="@+id/bookinfo_title"
+                    android:background="@drawable/edge"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,15 +77,15 @@
                     android:gravity="center"
                     android:background="@drawable/edge"
                     ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="9"
-                android:text="저자/출판"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:id="@+id/bookinfo_pub"
-                android:background="@drawable/edge"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:text="저자/출판"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:id="@+id/bookinfo_pub"
+                    android:background="@drawable/edge"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,6 +104,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -108,6 +112,7 @@
         android:weightSum="10"
         android:orientation="vertical"
         android:background="@drawable/edge">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -127,5 +132,4 @@
             android:autoSizeStepGranularity="1dp"
             android:id="@+id/bookinfo_info"></TextView>
     </LinearLayout>
-
 </LinearLayout>

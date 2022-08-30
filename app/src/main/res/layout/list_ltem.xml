@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="5"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/item_bg"
+    >
     <ImageView
         android:layout_width="0dp"
         android:layout_height="match_parent"

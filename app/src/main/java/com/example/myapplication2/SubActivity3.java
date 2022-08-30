@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class SubActivity3 extends AppCompatActivity {
     TextView textView;
-    private Button major_btn;
+    private ImageButton major_btn;
 
     String[] select_major={"전공 선택","복지융합인재학부","사회복지학부","실버산업학과","글로벌경영학부","ICT융합공학부","부동산건설학부"};
 
