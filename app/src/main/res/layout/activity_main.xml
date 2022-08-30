@@ -19,7 +19,6 @@
         android:layout_weight="13"
         >
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -81,7 +80,6 @@
                 android:layout_height="90dp"
                 android:background="@drawable/confirm_btn"
                 android:gravity="center"
-
                 android:elevation="40dp"
                 android:text="                    "
                 android:textColor="#000000"

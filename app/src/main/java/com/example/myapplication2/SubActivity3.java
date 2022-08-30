@@ -42,24 +42,48 @@ public class SubActivity3 extends AppCompatActivity {
                 switch (position)
                 {
                     case 1:
-                        Toast.makeText(getApplicationContext(),"준비 중입니다",
-                                Toast.LENGTH_SHORT).show();
-                        major_btn.setEnabled(false);
+                        major_btn.setEnabled(true);
+                        major_btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "Faculty_Welfare");
+                                startActivity(intent);
+                            }
+                        });
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"준비 중입니다",
-                                Toast.LENGTH_SHORT).show();
-                        major_btn.setEnabled(false);
+                        major_btn.setEnabled(true);
+                        major_btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "Social_Welfare");
+                                startActivity(intent);
+                            }
+                        });
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"준비 중입니다",
-                                Toast.LENGTH_SHORT).show();
-                        major_btn.setEnabled(false);
+                        major_btn.setEnabled(true);
+                        major_btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "Silver_industry");
+                                startActivity(intent);
+                            }
+                        });
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"준비 중입니다",
-                                Toast.LENGTH_SHORT).show();
-                        major_btn.setEnabled(false);
+                        major_btn.setEnabled(true);
+                        major_btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "Global_management");
+                                startActivity(intent);
+                            }
+                        });
                         break;
                     case 5:
                         major_btn.setEnabled(true);
@@ -73,9 +97,15 @@ public class SubActivity3 extends AppCompatActivity {
                         });
                         break;
                     case 6:
-                        Toast.makeText(getApplicationContext(),"준비 중입니다",
-                                Toast.LENGTH_SHORT).show();
-                        major_btn.setEnabled(false);
+                        major_btn.setEnabled(true);
+                        major_btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent=new Intent(SubActivity3.this,SubActivity4.class);
+                                intent.putExtra("Major", "Estate_construction");
+                                startActivity(intent);
+                            }
+                        });
                         break;
                 }
             }
