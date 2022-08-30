@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Search_Activity">
+    tools:context=".Search_Activity"
+    android:background="@drawable/book_list_body"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,11 +23,13 @@
                 android:text="추천하는 도서"
                 android:textSize="30dp"
                 android:gravity="center"
+                android:id="@+id/booktitle"
                 android:layout_centerInParent="true"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="검색된 책의 수 : "
+                android:layout_toLeftOf="@+id/booktitle"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/serach_book_text"></TextView>
             <TextView
@@ -34,19 +38,20 @@
                 android:text="몇 권"
                 android:id="@+id/search_book_count"
                 android:layout_toRightOf="@id/serach_book_text"
-                android:layout_alignParentBottom="true"></TextView>
+                android:layout_alignParentBottom="true"
+                ></TextView>
         </RelativeLayout>
         <ListView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="8"
             android:id="@+id/list_Id"
-            android:layout_weight="8">
+            >
         </ListView>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-
             <Button
                 android:id="@+id/booklist_piv"
                 android:layout_width="wrap_content"

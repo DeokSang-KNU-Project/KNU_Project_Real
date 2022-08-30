@@ -4,11 +4,27 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:weightSum="5"
     tools:context=".BookDetail"
-    android:background="@drawable/book_bg">
-
-    <LinearLayout
+    android:background="@drawable/back_book_info">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/front_book_info"></ImageView>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -22,6 +38,8 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:src="@drawable/lamb2"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
             android:id="@+id/bookinfo_image"
             android:background="@drawable/edge"
             ></ImageView>
@@ -119,6 +137,7 @@
             android:layout_weight="2"
             android:text="책 소개"
             android:gravity="center|left"
+            android:paddingHorizontal="5dp"
             android:textSize="30dp"></TextView>
         <TextView
             android:layout_width="match_parent"
@@ -130,6 +149,10 @@
             android:autoSizeMaxTextSize="30dp"
             android:autoSizeMinTextSize="5dp"
             android:autoSizeStepGranularity="1dp"
+            android:paddingHorizontal="5dp"
+            android:paddingBottom="2dp"
             android:id="@+id/bookinfo_info"></TextView>
     </LinearLayout>
+    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

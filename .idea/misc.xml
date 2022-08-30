@@ -3,24 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/drawable/button.xml" value="0.25" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/drawable/confirm_btn.xml" value="0.214" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/drawable/confirm_cbtn.xml" value="0.1175" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/drawable/confirm_lbtn.xml" value="0.1325" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/drawable/edge.xml" value="0.144" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_cactivity.xml" value="0.2269021739130435" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_chash.xml" value="0.17806484295845998" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_game.xml" value="0.17806484295845998" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_java.xml" value="0.17806484295845998" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_loading.xml" value="0.33" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_python.xml" value="0.17806484295845998" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_search.xml" value="0.26902173913043476" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.23143115942028986" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_sub3.xml" value="0.22" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/activity_sub4.xml" value="0.25" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/book_information.xml" value="0.26902173913043476" />
-        <entry key="..\:/AndroidStudio/KNU_Project_Real/app/src/main/res/layout/list_ltem.xml" value="0.33" />
+        <entry key="..\:/File/KNU_Backup/app/src/main/res/layout/activity_sub3.xml" value="0.359375" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/confirm_btn.xml" value="0.3105" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_bottom.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_left.xml" value="0.265" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_right.xml" value="0.264" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/drawable/edge_top.xml" value="0.265" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_cactivity.xml" value="0.3494791666666667" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_chash.xml" value="0.3494791666666667" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_cpp.xml" value="0.3494791666666667" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_game.xml" value="0.3494791666666667" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_java.xml" value="0.41875" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_loading.xml" value="0.19791666666666666" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_python.xml" value="0.3489583333333333" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_search.xml" value="0.33" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub2.xml" value="0.22" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub3.xml" value="0.33559782608695654" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/activity_sub4.xml" value="0.33" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/book_information.xml" value="0.25" />
+        <entry key="..\:/File/KNU_Project_Real/app/src/main/res/layout/list_ltem.xml" value="0.33" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.23772609819121446" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sub2.xml" value="0.358695652173913" />
         <entry key="..\:/Users/name/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_sub3.xml" value="0.358695652173913" />
@@ -32,5 +35,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

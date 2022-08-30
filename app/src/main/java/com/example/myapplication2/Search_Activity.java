@@ -97,7 +97,6 @@ public class Search_Activity extends AppCompatActivity {
         adapter = new CustomAdapter(this, 0, bookarr);
         booklist.setAdapter(adapter);
 
-
         booklist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
