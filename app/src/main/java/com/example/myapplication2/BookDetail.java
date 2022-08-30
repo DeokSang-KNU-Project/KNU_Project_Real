@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,7 +40,7 @@ public class BookDetail extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.bookinfo_image);
         TextView Title_lay = findViewById(R.id.bookinfo_title);
         TextView pub = findViewById(R.id.bookinfo_pub);
-        Button URLlink = findViewById(R.id.bookinfo_link);
+        ImageButton URLlink = findViewById(R.id.bookinfo_link);
         TextView Bookdes = findViewById(R.id.bookinfo_info);
 
         Title_lay.setText(Title);

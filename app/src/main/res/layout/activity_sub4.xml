@@ -3,14 +3,15 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/cscreen"
+        android:background="@drawable/real_bg1"
         >
     <LinearLayout
-        android:weightSum="10"
+        android:weightSum="15"
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         >
         <TextView
             android:id="@+id/textView2"
@@ -30,7 +31,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="7"
+            android:layout_weight="10"
             android:orientation="horizontal"
             android:weightSum="5"
             >
@@ -55,49 +56,62 @@
             </LinearLayout>
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="horizontal"
             android:weightSum="3"
+
             >
 
             <LinearLayout
                 android:id="@+id/group3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_gravity="center"
                 >
 
-                <Button
+                <ImageButton
                     android:id="@+id/piv_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이전"
+                    android:background="@drawable/confirm_pbtn"
                     android:textColor="#000000"
                     />
 
             </LinearLayout>
 
+
+
             <LinearLayout
                 android:id="@+id/group5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_gravity="center"
                 >
 
-                <Button
+                <ImageButton
                     android:id="@+id/confirm_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/confirm_cbtn"
                     android:text="확인"
                     android:textColor="#000000"
                     />
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/group6"
@@ -108,14 +122,19 @@
                 android:layout_gravity="center"
                 >
 
-                <Button
+                <ImageButton
                     android:id="@+id/next_btn"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:text="다음"
+                    android:background="@drawable/confirm_nbtn"
                     android:textColor="#000000"
                     />
             </LinearLayout>
+
+
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -47,9 +48,9 @@ public class SubActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_sub4);
 
         RadioGroup radioGroup = findViewById(R.id.r_group);
-        Button pivBtn = findViewById(R.id.piv_btn);
-        Button nxtBtn = findViewById(R.id.next_btn);
-        Button confilmBtn = findViewById(R.id.confirm_btn);
+        ImageButton pivBtn = findViewById(R.id.piv_btn);
+        ImageButton nxtBtn = findViewById(R.id.next_btn);
+        ImageButton confilmBtn = findViewById(R.id.confirm_btn);
 
         Intent intent = getIntent();
         Major = intent.getStringExtra("Major");
