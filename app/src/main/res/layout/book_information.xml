@@ -110,14 +110,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/edge">
-                <Button
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="구매 페이지 바로가기"
                     android:textSize="20dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:id="@+id/bookinfo_link"></Button>
+                    android:background="@drawable/confirm_hbtn"
+                    android:id="@+id/bookinfo_link"></ImageButton>
             </LinearLayout>
         </LinearLayout>
 
