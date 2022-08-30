@@ -57,8 +57,9 @@ public class Search_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        Intent intent = getIntent();
+        SearchWord = intent.getStringExtra("SearchWord");
 
-        SearchWord = "C%2B%2B";
         resulttext = "없음";
         ListView booklist = findViewById(R.id.list_Id);
         Button nxtBtn = findViewById(R.id.booklist_next);
